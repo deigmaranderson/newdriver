@@ -8,7 +8,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-
   rForm: FormGroup;
   post: any;                     // A property for our submitted form
   description: string = '';
