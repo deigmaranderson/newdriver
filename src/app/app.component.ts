@@ -1,5 +1,5 @@
 import { AfterViewChecked, Component, OnChanges, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +27,13 @@ export class AppComponent implements OnInit {
   addPost(post) {
     this.description = post.description;
     this.name = post.name;
+  }
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
   }
   ngOnInit() {
     this.rForm.get('validate').valueChanges.subscribe(
