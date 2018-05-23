@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+/* To display a border for the input */
+.mat-form-field-flex{
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 60vw !important;
+}
+/* To remove the default underline */
+.mat-input-underline.mat-form-field-underline {
+    background: transparent;
+}
+/* To remove the underline ripple */
+.mat-input-ripple.mat-form-field-ripple{
+    background-color: transparent; 
+}
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    margin: -4px 0 0 10px;
+}
+.mat-form-field-infix input {
+    margin: 0 10px;
+}
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    transform: perspective(100px);
+    transform-origin: 0 30px;
+}
+input[type=text]:focus, input[type=text]{
+    box-shadow: none;
+    border-bottom: none;
+  }
+.mat-focused .mat-form-field-label {
+color: #ff8200 !important;
+}
+
+.mat-form-field-ripple {
+background-color: #ff8200 !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0px !important;
+}
+.mat-form-field-appearance-legacy.mat-form-field-invalid:not(.mat-focused) .mat-form-field-ripple {
+    height: 0px !important;
+}
+.mat-form-field.mat-focused .mat-form-field-ripple, .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+    opacity: 0 !important;
+}

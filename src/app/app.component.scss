@@ -1,0 +1,57 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$my-app-primary: mat-palette($mat-blue-grey);
+$my-app-accent:  mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn:    mat-palette($mat-deep-orange);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+.alternate-theme {
+  $alternate-primary: mat-palette($mat-light-blue);
+  $alternate-accent:  mat-palette($mat-yellow, 400);
+
+  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+
+  @include angular-material-theme($alternate-theme);
+}
+
+p {
+  font-family: Lato;
+}
+
+$md-paleta: (
+    50 : #fef3e0,
+    100 : #fde1b3,
+    200 : #fccd80,
+    300 : #fbb84d,
+    400 : #faa926,
+    500 : #f99a00,
+    600 : #f89200,
+    700 : #f78800,
+    800 : #f67e00,
+    900 : #f56c00,
+    A100 : #ffffff,
+    A200 : #fff1e8,
+    A400 : #ffd1b5,
+    A700 : #ffc29c,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+

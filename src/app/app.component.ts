@@ -1,10 +1,11 @@
-import { AfterViewChecked, Component, OnChanges, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, OnChanges, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   title = 'app';
