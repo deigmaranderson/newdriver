@@ -1,16 +1,20 @@
 export class Indicante {
-    email: string;
-    cpf: number;
-    nome: string;
-    cep: number;
-    endereco: string;
-    numero: number;
-    cidade: string;
+    email?: string;
+    cpf?: number;
+    nome?: string;
+    cep: string;
+    endereco?: string;
+    logradouro: string;
+    numero?: number;
+    cidade?: string;
+    localidade: string;
     uf: string;
-    empresaCadastrada: string; //number??
-    alreadyExists: boolean;  
+    complemento: string;
+    empresaCadastrada?: string; //number??
+    alreadyExists?: boolean;  
 
     public constructor(values: Object = {}){
         Object.assign(this, values);
     }
 }
+

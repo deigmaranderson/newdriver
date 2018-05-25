@@ -18,7 +18,7 @@ describe('Indicante', () => {
         uf: 'sp',
         alreadyExists: true
     });
-    expect(indicante.cep).toEqual(123456789);
+    expect(indicante.cep).toEqual('123456789');
     expect(indicante.cidade).toEqual('teste');
     expect(indicante.cpf).toEqual(123456789);
     expect(indicante.email).toEqual('teste@gmail.com');

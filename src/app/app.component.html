@@ -1,41 +1,69 @@
 <div *ngIf="!name; else forminfo">
   <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
-    <div class="form-container">
-      <div class="row columns">
-        <h1>Newdriver App</h1>
-        <label>Nome
-          <input type="text" formControlName="name">
-        </label>
-        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{ titleAlert }}</div>
+  
+   
+    <mat-card-content class="mat-card-content">
+      <div class="containerX">
+        <div class="colorNested box" fxlayout="column">
+          <header >Menu</header>
+          <div class="main" fxflex="" fxlayout.xs="column">
+            <!-- Nav -->
+            <nav fxflex="1 6 20%" fxflexorder.xs="2"></nav>
+            <!-- Article -->
+            <article fxflex="3 1 60%" fxflexorder.xs="1"> 
+              <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                banner
+              </div>
 
-        <label>Um texto
-          <textarea  formControlName="description"></textarea>
-        </label>
-        <div class="alert" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">Texto deve estar entre 30 ou 300 caracteres.</div>
-
-        <label for="validate">Minimo de 3 caracteres</label>
-        <input type="checkbox" name="validate" formControlName="validate" value="1"> ok
-
-        <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+              <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+                    <!-- Email Field -->
+                    <mat-form-field>
+                      <input matInput placeholder="Digite seu email" formControlName="email" required>
+                      <mat-error *ngIf="rForm.controls['email'].errors">{{getErrorMessage('email')}}</mat-error>
+                    </mat-form-field>
+                    <!-- CEP Field -->
+                    <mat-form-field>
+                      <input matInput placeholder="CEP" formControlName="cep" (keyup)="valueChange($event)">
+                      <mat-error *ngIf="rForm.controls['cep'].errors">{{getErrorMessage('cep')}}</mat-error>
+                    </mat-form-field>
+                    <!-- Endereço Field -->
+                    <mat-form-field>
+                      <input matInput placeholder="Endereço" formControlName="endereco">
+                    </mat-form-field>
+                    <!-- Número Field -->
+                    <mat-form-field>
+                      <input matInput placeholder="Número" formControlName="numero">
+                    </mat-form-field>
+                    <!-- Complemento Field -->
+                    <mat-form-field>
+                      <input matInput placeholder="Complemento" formControlName="complemento">
+                    </mat-form-field>
+                    <!-- Cidade Field -->
+                    <mat-form-field>
+                      <input matInput placeholder="Cidade" formControlName="cidade">
+                    </mat-form-field>
+                    <!-- UF Field -->
+                    <!-- <mat-form-field>
+                      <input matInput placeholder="UF" formControlName="uf">
+                    </mat-form-field> -->
+                    <!-- UF Field -->
+                    <mat-form-field>
+                      <mat-select placeholder="Selecione" formControlName="uf">
+                          <mat-option *ngFor="let state of states" [value]="state.Sigla">{{ state.Sigla }}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+              </div>
+            </article>
+            <!-- Aside -->
+            <aside fxflex="1 6 20%" fxflexorder.xs="3"></aside>
+          </div>
+          <!-- footer -->
+          <footer>
+            <input type="submit" class="button expanded" value="Enviar" [disabled]="!rForm.valid">
+          </footer>
+        </div>
       </div>
-    </div>
-    <div class="example-container">
-      <mat-form-field>
-        <input matInput placeholder="Enter your email" [formControl]="email" required>
-        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field>
-    </div>
-    <div class="example-container">
-      <mat-form-field>
-        <input matInput placeholder="Input">
-      </mat-form-field>
-    
-      <mat-form-field>
-        <mat-select placeholder="Select">
-          <mat-option value="option">Option</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+    </mat-card-content>
   </form>
 </div>
 

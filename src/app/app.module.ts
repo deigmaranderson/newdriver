@@ -5,8 +5,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 
-import { MatFormFieldModule, MatInputModule, MatCheckboxModule, MatRadioModule, MatSelectModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatCheckboxModule, MatRadioModule, MatSelectModule, MatCardModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ViacepModule } from '@brunoc/ngx-viacep';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatCardModule,
+    ViacepModule
   ],
   exports: [
     MatFormFieldModule,
@@ -30,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCheckboxModule,
     MatRadioModule,
     MatSelectModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [],
